@@ -16,13 +16,18 @@ img {
 }
 
 /*<500px S*/
-@media only screen and (max-width: 499px) { }
+@media only screen and (max-width: 499px) { 
 
+}
+
+.configurator {
+  background-image: url('/product-configurator/public/eye.png');
+}
 /*500-1200 M*/
 @media only screen and (min-width: 500px) and (max-width: 1199px) { 
   .configurator {
-    top: -393px;
-left: 119px;
+    top: -300px;
+    left: 119px;
   }
 
   div canvas {
@@ -32,13 +37,22 @@ left: 119px;
     left: 100px;
     display: flex;
     cursor: grab;
+    
+  }
+  .myButton {
+    position: absolute;
+    top: 543px;
+  left: -627px;
+    width:50px;
+    height:50px;
+    cursor: pointer;
   }
 }
 
 /*>1200px L*/
 @media only screen and (min-width: 1200px) {
   .configurator {
-    top: -355px;
+    top: -300px;
     left: 250px;
     position: absolute;
   }
@@ -47,8 +61,56 @@ left: 119px;
     margin-left: -200px;
   }
   canvas{
+    width: 500px;
     left: 100px;
     display: flex;
     cursor: grab;
   }
+  .myButton {
+    position: absolute;
+    top: 543px;
+  left: -833px;
+    width:50px;
+    height:50px;
+    cursor: pointer;
+  }
  }
+
+ .host{
+  background:#FFF;
+  width:50px;
+  height:800px;
+}
+.loading{
+  width:10px;
+  height:10px;
+  background:#FFF;
+  border-radius:100%;
+  float:left;
+  margin-right:5px;
+}
+.loading-0{
+    -webkit-animation:bounce 1s infinite;
+    -webkit-animation-delay:.1s;
+    background:#808080
+  
+}
+.loading-1{
+    -webkit-animation:bounce 1s infinite;
+    -webkit-animation-delay:.3s;
+    background:#a0a0a0;
+}
+.loading-2{
+    -webkit-animation:bounce 1s infinite ease;
+    -webkit-animation-delay:.5s;
+    background:#c0c0c0;
+}
+@-webkit-keyframes bounce {
+  0%, 100% {
+    opacity:1;
+  }
+  60% {
+    opacity:.0;
+   
+  }
+}

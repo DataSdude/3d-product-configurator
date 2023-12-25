@@ -1,5 +1,5 @@
 import React, {
-  Suspense,
+  Suspense, useEffect, useState,
 } from "react";
 import { Canvas} from "@react-three/fiber";
 import {
@@ -12,8 +12,13 @@ import { Html, useProgress } from "@react-three/drei";
 import Model from "./models/Model";
 
 function Loader() {
-  const { progress } = useProgress();
-  return <Html center>{progress} % loaded</Html>;
+  return <Html>
+    <div className="host">
+  <div className="loading loading-0"></div>
+  <div className="loading loading-1"></div>
+  <div className="loading loading-2"></div>
+</div>
+  </Html>;
 }
 
 // Define a component to load and display a model
@@ -76,6 +81,7 @@ return <primitive object={gltf.scene} />
 
 export default function App({model}) {
   return (
+    <>
       <Canvas
         shadows
         camera={{ position: [0.5, 1, 2.5], fov: 25 }}
@@ -94,8 +100,9 @@ export default function App({model}) {
           minDistance={1.8}
         />
         <Suspense fallback={<Loader/>}>
-            <Model url={model} />
+            <Model url={model}/>
         </Suspense>
       </Canvas>
+      </>
   );
 }
