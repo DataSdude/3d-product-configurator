@@ -5,6 +5,6 @@ import "./App.css"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App model='Home Chair'/>
+    <App model='Space_Corona'/>
   </React.StrictMode>,
 )

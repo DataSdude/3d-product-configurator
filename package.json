@@ -10,12 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.2",
     "@react-three/drei": "^9.92.3",
     "@react-three/fiber": "^8.15.12",
+    "bootstrap": "^5.3.2",
     "gltfjsx": "^6.2.15",
     "leva": "^0.9.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.1",
     "three": "^0.159.0",
     "valtio": "^1.12.1"
   },

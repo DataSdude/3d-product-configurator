@@ -1,8 +1,9 @@
 import { Center, Html, useGLTF } from "@react-three/drei";
-import { useLoader } from "@react-three/fiber";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import React, { useMemo, useRef } from "react";
 import { ReactDOM } from "react";
 import * as THREE from "three";
+import { useLoader } from "@react-three/fiber";
 const Model = ({ url }) => {
   const mesh1Ref = useRef(null);
   const mesh2Ref = useRef(null);
@@ -12,7 +13,7 @@ const Model = ({ url }) => {
     "https://www.gstatic.com/draco/versioned/decoders/1.5.6/'"
   );
 
-  const { nodes, materials } = useGLTF(url + ".glb"); // use the useGLTF hook from drei to load the model
+  const { nodes, materials } = useLoader(GLTFLoader, url + ".glb"); // use the useGLTF hook from drei to load the model
 
   // use the useControls hook to create a control panel
   /*   const seatOptions = useMemo(() => {
@@ -116,6 +117,10 @@ const Model = ({ url }) => {
     <>
       <Center>
         <group dispose={null}>
+          <group 
+          rotation={[Math.PI / 0.5, 0, 0]}
+          position={[0, -0.5, 0.07]}
+          scale={0.9}>
           <mesh
             castShadow
             receiveShadow
@@ -171,6 +176,7 @@ const Model = ({ url }) => {
               aoMap={seamMap1[4]}
             />
           </mesh>
+          </group>
         </group>
       </Center>
       <Html
@@ -181,7 +187,7 @@ const Model = ({ url }) => {
           className="myButton"
           src="/downloadme.png"
           onClick={() => {
-            const canvas = document.getElementsByTagName("canvas")[0];
+            const canvas = document.getElementsByTagName("canvas")[1];
             const imageObject = new Image();
             imageObject.src = canvas.toDataURL('image/png');
 
@@ -218,7 +224,7 @@ const Model = ({ url }) => {
         </div>
         <div
           className="LeatherLeatherWeave"
-          id="header"
+          id="header_1"
           style={{
             width: 230,
             height: 23,
@@ -331,7 +337,7 @@ const Model = ({ url }) => {
           }}
           src="./textures/Leather_Weave_002_basecolor.jpg"
           onClick={() => {
-            const label = document.getElementById("header");
+            const label = document.getElementById("header_1");
             label.innerText = "Leather - Leather Weave";
             (mesh1Ref.current.map = seatMap1[0]),
               (mesh1Ref.current.displacementMap = seatMap1[1]),
@@ -515,7 +521,7 @@ const Model = ({ url }) => {
           }}
           src="./textures/Leather_011_basecolor.jpg"
           onClick={() => {
-            const label = document.getElementById("header");
+            const label = document.getElementById("header_1");
             label.innerText = "Leather - Leather Crocodile";
             (mesh1Ref.current.map = seatMap2[0]),
               (mesh1Ref.current.displacementMap = seatMap2[1]),
@@ -535,7 +541,7 @@ const Model = ({ url }) => {
           }}
           src=""
           onClick={() => {
-            const label = document.getElementById("header");
+            const label = document.getElementById("header_1");
             label.innerText = "Leather - Leather Weave";
           }}
         /> */}
@@ -568,7 +574,7 @@ const Model = ({ url }) => {
           }}
           src="./textures/Substance_Graph_basecolor.jpg"
           onClick={() => {
-            const label = document.getElementById("header");
+            const label = document.getElementById("header_1");
             label.innerText = "Fabric - Substance Graph";
             (mesh1Ref.current.map = seatMap3[0]),
               (mesh1Ref.current.displacementMap = seatMap3[1]),
@@ -601,7 +607,7 @@ const Model = ({ url }) => {
             borderRadius: 11,
           }}
           onClick={() => {
-            const seat = document.getElementById("header");
+            const seat = document.getElementById("header_1");
             //const seam = document.getElementById("header_2");
             const legs = document.getElementById("header_3");
             const email = `Seat: ${seat.innerText} %0D%0A Legs: ${legs.innerText}`;
