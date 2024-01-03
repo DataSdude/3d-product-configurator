@@ -7,7 +7,6 @@ import Model from "./models/Model";
 import Model2 from "./models/Model2";
 import 'bootstrap/dist/css/bootstrap.css';
 
-import ModelCards from "./components/ModelCards";
 function Loader() {
   return (
     <Html>
@@ -69,7 +68,7 @@ export default function App({ model }) {
         </div>
       </div>
       <Canvas
-      frameloop="demand"
+        frameloop="demand"
         id="sidebar"
         hidden={true}
         shadows

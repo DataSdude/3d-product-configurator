@@ -20,21 +20,451 @@ img {
 }
 
 /*<500px S*/
-@media only screen and (max-width: 499px) {}
+@media only screen and (max-width: 499px) {
+.section-header p {
+  font-size: 28px;
+  line-height: 32px;
+}
+
+[data-aos-delay] {
+  transition-delay: 0 !important;
+}
+
+
+.configurator {
+  position: absolute;
+  top: -133px;
+left: -199px;
+}
+
+.configurator2 {
+  left: -167px;
+  top: 50px;
+  width: 90vw;
+  position: absolute;
+}
+
+model-viewer#model {
+  position: absolute;
+  left: -200px;
+  top: -400px;
+  width: 400px;
+  height:370px;
+}
+model-viewer#model1 {
+  position: absolute;
+  left: -200px;
+  top: -422px;
+  width: 400px;
+  height:400px;
+}
+
+
+/* Style for the custom alert box */
+#custom-alert {
+display: none;
+position: absolute;
+
+top: -133px;
+left: 169px;
+transform: translate(-100%, -60%);
+padding: 10px;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 5%;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
+
+#alertHeader {
+margin: 0;
+font-weight: 300;
+}
+#alertParagraph{
+font-weight: 100;
+align-items: center;
+}
+
+
+/* Style for the overlay background */
+#overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 999;
+}
+
+/* Style for the close button */
+#close-btn {
+cursor: pointer;
+font-size: 18px;
+font-weight: bold;
+color: #333;
+}
+/**
+MENU 1 
+*/
+#menu1Box {
+  left: -212px;
+top: -85px;
+}
+
+#menu1Line1 {
+  left: 80px;
+}
+
+#menu1Line2{
+  left: 255px
+}
+
+#menu13D{
+  left: 8px;
+  top: 5px;
+}
+.changeDoorsImage{
+  left: 86px;
+  top: 12px;
+}
+.changeBodyImage{
+  left: 260px;
+  top: 12px;
+}
+#menu1ChangeBody{
+  left: 145px;
+  top: 26px
+}
+
+#menu1ChangeDoors {
+  left: 320px;
+  top: 26px
+}
+/**
+END MENU 1 
+*/
+
+
+/**
+MENU 2 
+*/
+#menu2Box {
+  left: -182px;
+  top: -85px;
+}
+
+#menu2Material1 {
+left: 90px;
+top: 10px;
+}
+
+#menu2Material2 {
+left: 180px;
+top: 10px;
+}
+#menu2Material3 {
+left: 270px;
+top: 10px;
+}
+
+#menu2Return {
+left: 20px;
+top: 15px;
+}
+
+/**
+END MENU 2
+*/
+
+
+/**
+MENU 2 
+*/
+#menu3Box {
+  left: -182px;
+  top: -85px;
+}
+
+#menu3Material1 {
+left: 90px;
+top: 10px;
+}
+
+#menu3Material2 {
+left: 180px;
+top: 10px;
+}
+#menu3Material3 {
+left: 270px;
+top: 10px;
+}
+
+#menu3Return {
+left: 20px;
+top: 15px;
+}
+
+/**
+END MENU 2
+*/
+
+
+
+h1 {
+  margin-left: 20px;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: 'Merriweather';
+  width: 300px;
+}
+
+h3 {
+  margin-left: 20px;
+  margin-bottom: 13px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Merriweather';
+  width: 300px;
+}
+
+h5 {
+  margin-left: 20px;
+  font-family: 'Merriweather', serif;
+  width: 300px;
+  font-style: italic;
+  padding-bottom: 10px;
+}
+
+p {
+  margin-left: 20px;
+  font-family: 'Merriweather';
+  margin-bottom: 30px;
+  width: 300px;
+}
+
+div canvas {
+  margin-left: -200px;
+}
+
+canvas {
+  left: 100px;
+  display: flex;
+  cursor: grab;
+
+}
+
+.myButton {
+  position: absolute;
+  top: 543px;
+  left: -627px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.myButton2 {
+  position: absolute;
+  top: -183px;
+left: 329px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.myButton2model1 {
+  position: absolute;
+  top: 9px;
+  left: 353px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+}
 
 /*500-1200 M*/
 @media only screen and (min-width: 500px) and (max-width: 1199px) {
   .configurator {
+    position: absolute;
     top: -300px;
     left: 119px;
   }
 
   .configurator2 {
     top: -200px;
-    left: 186px;
+    left: 100px;
     position: absolute;
     width: 300px;
+    margin-right: 50px;
   }
+
+  model-viewer#model1 {
+    width: 500px;
+    height: 700px;
+    left: -450px;
+    top: -320px;
+  }
+  
+  model-viewer#model {
+    width: 500px;
+    height: 700px;
+    left: -450px;
+    top: -320px;
+  }
+  /* Style for the custom alert box */
+#custom-alert {
+  display: none;
+  position: absolute;
+  top: 17%;
+  left: 7%;
+  transform: translate(-100%, -60%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 1000;
+}
+
+#alertHeader {
+  margin: 0;
+  font-weight: 300;
+}
+#alertParagraph{
+  font-weight: 100;
+  align-items: center;
+}
+
+
+/* Style for the overlay background */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Style for the close button */
+#close-btn {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+/**
+  MENU 1 
+*/
+  #menu1Box {
+    left: -400px;
+    top: -490px;
+  }
+
+  #menu1Line1 {
+    left: 80px;
+  }
+  
+  #menu1Line2{
+    left: 255px
+  }
+
+  #menu13D{
+    left: 8px;
+    top: 5px;
+  }
+  .changeDoorsImage{
+    left: 86px;
+    top: 12px;
+  }
+  .changeBodyImage{
+    left: 260px;
+    top: 12px;
+  }
+  #menu1ChangeBody{
+    left: 145px;
+    top: 26px
+  }
+
+  #menu1ChangeDoors {
+    left: 320px;
+    top: 26px
+  }
+  /**
+  END MENU 1 
+*/
+
+
+/**
+  MENU 2 
+*/
+#menu2Box {
+  left: -360px;
+  top: -490px;
+}
+
+#menu2Material1 {
+  left: 90px;
+  top: 10px;
+}
+
+#menu2Material2 {
+  left: 180px;
+  top: 10px;
+}
+#menu2Material3 {
+  left: 270px;
+  top: 10px;
+}
+
+#menu2Return {
+  left: 20px;
+  top: 15px;
+}
+
+/**
+END MENU 2
+*/
+
+
+/**
+  MENU 2 
+*/
+#menu3Box {
+  left: -360px;
+  top: -490px;
+}
+
+#menu3Material1 {
+  left: 90px;
+  top: 10px;
+}
+
+#menu3Material2 {
+  left: 180px;
+  top: 10px;
+}
+#menu3Material3 {
+  left: 270px;
+  top: 10px;
+}
+
+#menu3Return {
+  left: 20px;
+  top: 15px;
+}
+
+/**
+END MENU 2
+*/
+
+  .configurator2  > * {
+    margin-right: 50px;
+  }
+
 
   h1 {
     margin-left: 20px;
@@ -87,12 +517,21 @@ img {
     height: 50px;
     cursor: pointer;
   }
+  .myButton2model1 {
+    position: absolute;
+    top: 500px;
+    left: -600px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+
   .myButton2 {
     position: absolute;
-    top: 410px;
-    left: -705px;
-    width: 50px;
-    height: 50px;
+    top: 400px;
+    left: -600px;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
   }
 }
@@ -101,17 +540,153 @@ img {
 @media only screen and (min-width: 1200px) {
 
   .configurator {
-    top: -300px;
-    left: 250px;
+    top: -350px;
+    left: 390px;
     position: absolute;
+  }
+  model-viewer#model1{
+    position: absolute;
+    width: 80vw;
+    height: 70vh;
+    left: -1100px;
+    top: -390px;
   }
 
   .configurator2 {
-    top: -150px;
-    left: 200px;
+    top: -190px;
+    left: 300px;
     position: absolute;
     width: 500px;
+    margin-left: 50px;
   }
+
+  model-viewer#model {
+    width: 70vw;
+    height: 90vh;
+    left: -1000px;
+    top: -500px;
+  }
+
+  .myButton2model1 {
+    position: absolute;
+    top: 500px;
+    left: -978px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .myButton2 {
+    position: absolute;
+    top: 490px;
+    left: -990px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  /**
+  MENU 1 
+*/
+#menu1Box {
+  left: -430px;
+  top: -680px;
+}
+
+#menu1Line1 {
+  left: 80px;
+}
+
+#menu1Line2{
+  left: 255px
+}
+
+#menu13D{
+  left: 8px;
+  top: 5px;
+}
+.changeDoorsImage{
+  left: 86px;
+  top: 12px;
+}
+.changeBodyImage{
+  left: 260px;
+  top: 12px;
+}
+#menu1ChangeBody{
+  left: 145px;
+  top: 26px
+}
+
+#menu1ChangeDoors {
+  left: 320px;
+  top: 26px
+}
+/**
+END MENU 1 
+*/
+
+
+/**
+MENU 2 
+*/
+#menu2Box {
+left: -420px;
+top: -680px;
+}
+
+#menu2Material1 {
+left: 90px;
+top: 10px;
+}
+
+#menu2Material2 {
+left: 180px;
+top: 10px;
+}
+#menu2Material3 {
+left: 270px;
+top: 10px;
+}
+
+#menu2Return {
+left: 20px;
+top: 15px;
+}
+
+/**
+END MENU 2
+*/
+
+
+/**
+MENU 3
+*/
+#menu3Box {
+left: -420px;
+top: -680px;}
+
+#menu3Material1 {
+left: 90px;
+top: 10px;
+}
+
+#menu3Material2 {
+left: 180px;
+top: 10px;
+}
+#menu3Material3 {
+left: 270px;
+top: 10px;
+}
+
+#menu3Return {
+left: 20px;
+top: 15px;
+}
+
+/**
+END MENU 2
+*/
 
   h1 {
     margin-left: 100px;
@@ -142,16 +717,7 @@ img {
     font-family: 'Merriweather';
   }
 
-  div canvas {
-    margin-left: -200px;
-  }
-
-  canvas {
-    width: 500px;
-    left: 100px;
-    display: flex;
-    cursor: grab;
-  }
+  
 
   .myButton {
     position: absolute;
@@ -161,14 +727,49 @@ img {
     height: 50px;
     cursor: pointer;
   }
-  .myButton2 {
-    position: absolute;
-    top: 357px;
-    left: -778px;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-  }
+  
+
+  /* Style for the custom alert box */
+#custom-alert {
+  display: none;
+  position: relative;
+  top: 20%;
+  left: 25%;
+  transform: translate(-100%, -60%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  z-index: 999;
+}
+
+#alertParagraph,
+#alertHeader {
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Style for the overlay background */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Style for the close button */
+#close-btn {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
 }
 
 .host {
@@ -500,51 +1101,13 @@ img {
 }
 
 
-/* Style for the custom alert box */
-#custom-alert {
-  display: none;
-  position: relative;
-  top: 20%;
-  left: 25%;
-  transform: translate(-100%, -60%);
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 5%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
 
-#alertParagraph,
-#alertHeader {
-  margin: 0;
-  font-weight: 300;
-}
-
-/* Style for the overlay background */
-#overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
-
-/* Style for the close button */
-#close-btn {
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-}
 
 /* src/components/ModelCards.css */
 .model-cards-container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 50px;
   height: 100vh; /* 100% of the viewport height */
