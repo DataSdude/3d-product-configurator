@@ -1,0 +1,58 @@
+[
+     {
+        "modelName":"chair",
+        "modelFile":"chair.glb",
+        "meshes":[
+           {
+              "description":"Costa_Bella_-_Fabris",
+              "textures":{
+                  "default": "materials[\"Material #8\"]",
+                  "Leather":"Leather_Weave_002",
+                  "Substance":"Substance_Graph"
+              }
+           },
+           {
+              "description":"Costa_Bella_-_Fabris_(legs)",
+              "textures":{
+                  "default": "materials[\"Material #9\"]",
+                  "Wood_planks":"Wood_planks_013",
+                  "Wood":"Wood_026"
+                 
+              }
+           },
+           {
+              "description":"Costa_Bella_-_Fabris_(seam)",
+              "textures":{
+                  "default": "materials[\"Material #8\"]",
+                  "texture_1":"Fabric_seam_002"
+                 }
+           }
+        ]
+     },
+     {
+        "modelName":"Table",
+        "modelFile":"table.gltf",
+        "meshes":[
+           {
+              "textures":[
+                 {
+                    "name":"surface"
+                 },
+                 {
+                    "name":"surface_texture.jpg"
+                 }
+              ]
+           },
+           {
+              "textures":[
+                 {
+                    "defaultt":"legType"
+                 },
+                 {
+                    "name":"legs_type1.jpg"
+                 }
+              ]
+           }
+        ]
+     }
+]
