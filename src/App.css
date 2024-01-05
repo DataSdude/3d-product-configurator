@@ -29,10 +29,10 @@ img {
 }
 
 .flex-container {
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding-top: 5vh;
 }
 .flex-container-model-selector {
   display: flex;
@@ -50,12 +50,47 @@ img {
   width: 90vw;
   height: 60vh;
 }
-.configurator {
-  top: -350px;
-  left: 390px;
-  position: absolute;
-}
-
+    /* CHair Model code */
+    .configurator {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 80vw;
+      height: 60vh;
+      padding: 1vw;
+      border: 1px solid #a4a5a5;
+      border-radius: 25px;
+    }
+    .flex-container-generic {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    .flex-container-generic-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .flex-container-generic-materials {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .flex-container-generic-materials img {
+      margin-left: 2vw;
+      width: 40px;
+      height: 40px;
+    }
+    .partHeader {
+      font-weight: bold;
+    }
+    .Button {
+      display: flex;
+      justify-content: center;
+      color: #fff;
+      align-items: center;
+    }
+    /* END CHair Model code */
 model-viewer {
   margin-top: 15%;
   width: 70vw;
@@ -67,16 +102,7 @@ model-viewer {
   height: 40px !important;
 }
 
-/*   .myButton2model1 {
-  position: absolute;
-  top: 500px;
-  left: -978px;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
 
- */
 /**
 MENU 1 
 */
@@ -87,7 +113,7 @@ justify-content: space-around;
 background: white;
 border: 1px #808080 solid;
 width: 90vw;
-border-radius: 3ch;
+border-radius: 25px;
 
 }
 .changeBody-container{
@@ -96,7 +122,7 @@ flex-wrap: wrap;
 align-content: center;
 justify-content: space-between;
 padding-left: 5px;
-width: 32%;
+width: 32vw;
 }
 div.changeBody-container {
 border-left: 1px solid #808080;
@@ -211,6 +237,7 @@ p#menu1ChangeDoors {
     border-radius: 5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    z-index: 10;
   }
   
 #alertHeader {
@@ -218,7 +245,8 @@ margin: 0;
 font-weight: 300;
 }
 #alertParagraph{
-font-weight: 100;
+font-weight: 500;
+font-size: small;
 align-items: center;
 }
 
@@ -367,9 +395,9 @@ h5 {
 /*500-1200 M*/
 @media only screen and (min-width: 500px) and (max-width: 1199px) {
   .flex-container {
-    position: absolute;
     display: flex;
     justify-content: space-around;
+    margin-right: 9vw;
   }
   .flex-container-model-selector {
     display: flex;
@@ -384,15 +412,51 @@ h5 {
     width: 20vw;
     height: 70vh;
   }
-  .configurator {
-    top: -350px;
-    left: 390px;
-    position: absolute;
-  }
+    /* CHair Model code */
+    .configurator {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 30vw;
+      height: 60vh;
+      padding: 1vw;
+      border: 1px solid #a4a5a5;
+      border-radius: 25px;
+    }
+    .flex-container-generic {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    .flex-container-generic-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .flex-container-generic-materials {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .flex-container-generic-materials img {
+      margin-left: 2vw;
+      width: 40px;
+      height: 40px;
+    }
+    .partHeader {
+      font-weight: bold;
+    }
+    .Button {
+      display: flex;
+      justify-content: center;
+      color: #fff;
+      align-items: center;
+    }
+    /* END CHair Model code */
 
  model-viewer {
-  width: 70vw;
-  height: 70vh;
+  width: 60vw;
+  height: 60vh;
   } 
 
   img.myButton2 {
@@ -548,6 +612,7 @@ END MENU 3
     border-radius: 5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    z-index: 10;
   }
 
 #alertHeader {
@@ -555,7 +620,8 @@ END MENU 3
   font-weight: 300;
 }
 #alertParagraph{
-  font-weight: 100;
+  font-weight: 600;
+  font-size: medium;
   align-items: center;
 }
 
@@ -676,12 +742,50 @@ END MENU 3
     width: 20vw;
     height: 70vh;
   }
+  /* CHair Model code */
   .configurator {
-    top: -350px;
-    left: 390px;
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 20vw;
+    height: 70vh;
+    padding: 1.5vw;
+    border: 1px solid #a4a5a5;
+    border-radius: 25px;
   }
-
+  .flex-container-generic {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .flex-container-generic-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .flex-container-generic-materials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .flex-container-generic-materials img {
+    margin-left: 2vw;
+    width: 50px;
+    height: 50px;
+  }
+  .partHeader {
+    font-weight: 400;
+  }
+  #header_1, #header_2{
+    font-size: 14px !important;
+  }
+  .Button {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    align-items: center;
+  }
+  /* END CHair Model code */
  model-viewer {
   width: 70vw;
   height: 70vh;
@@ -697,16 +801,13 @@ END MENU 3
     cursor: pointer;
   }
 
-/*   .myButton2model1 {
-    position: absolute;
-    top: 500px;
-    left: -978px;
-    width: 50px;
-    height: 50px;
+  .myButton2model1 {
+    width: 60px;
+    height: 60px;
     cursor: pointer;
   }
 
-   */
+  
   /**
   MENU 1 
 */
@@ -840,12 +941,13 @@ END MENU 3
     border-radius: 5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    z-index: 10;
   }
 
 #alertParagraph,
 #alertHeader {
   margin: 0;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 /* Style for the overlay background */

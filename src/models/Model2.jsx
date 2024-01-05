@@ -1,9 +1,7 @@
-import { Center, Html, useGLTF } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 import React, { useRef } from "react";
-import { ReactDOM } from "react";
-import * as THREE from "three";
 
-const Model2 = ({ url }) => {
+const Model2 = () => {
   const modelViewerRef = useRef(null);
 
   const createAndApplyTexture = async (material, channel, texture) => {
@@ -23,10 +21,10 @@ const Model2 = ({ url }) => {
           id="model"
           className="model"
           ref={modelViewerRef}
-          src="/Space_Corona.gltf"
-          ar
+          src="kitchen.glb"
           camera-controls
           touch-action="pan-y"
+          ar
         ></model-viewer>
         <div id="custom-alert">
           <div
@@ -37,7 +35,7 @@ const Model2 = ({ url }) => {
           >
             X
           </div>
-          <img src="./qrimage.png" alt="Image" />
+          <img src="./qrimage.webp" alt="Image" />
           <h2>View Product In Your Home</h2>
           <p id="alertParagraph">
             Scan the QR code and point your mobile at the floor to begin placing
@@ -48,14 +46,14 @@ const Model2 = ({ url }) => {
           <div id="menu1Box" hidden={false}>
             <img
               className="myButton2"
-              src="/downloadme.png"
+              src="/downloadme.webp"
               onClick={async () => {
                 const modelViewer = document.getElementById("model");
                 const blob = await modelViewer.toBlob({ idealAspect: false });
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement("a");
                 a.href = url;
-                a.download = "Sidebar.png";
+                a.download = "Sidebar.webp";
                 a.click();
                 URL.revokeObjectURL(url);
               }}
@@ -68,14 +66,28 @@ const Model2 = ({ url }) => {
               }}
               hidden={false}
               slot="ar-button"
-              src="./3d-model - Copy.png"
+              src="./3d-model - Copy.webp"
               onClick={() => {
                 const modelViewer = document.getElementById("model");
-                if (modelViewer.canActivateAR == false) {
-                  document.getElementById("custom-alert").style.display =
-                    "block";
-                  document.getElementById("overlay").style.display = "block";
+                // Check if AR is supported
+                if ('xr' in navigator && 'requestDevice' in navigator.xr) {
+                  // Request XR device and enter AR mode
+                  navigator.xr.requestDevice()
+                    .then(function (xrDevice) {
+                      return xrDevice.requestSession({ immersive: true });
+                    })
+                    .then(function (xrSession) {
+                      // Activate AR mode on the model viewer
+                      modelViewer.activateAR(xrSession);
+                    })
+                    .catch(function (error) {
+                      console.error('Failed to enter AR:', error);
+                    });
+                } else {
+                  document.getElementById("custom-alert").style.display = "block";
+                  console.error('AR not supported.');
                 }
+
               }}
             />
             <div className="changeBody-container">
@@ -87,7 +99,7 @@ const Model2 = ({ url }) => {
                   height: 50,
                 }}
                 hidden={false}
-                src="./textures/Wood_a.jpg"
+                src="./textures/Wood_a.webp"
                 onClick={() => {
                   const menu1Elements = document.querySelector("#menu1Box");
                   const menu2Elements = document.querySelector("#menu2Box");
@@ -117,7 +129,7 @@ const Model2 = ({ url }) => {
                   height: 50,
                 }}
                 hidden={false}
-                src="./textures/Plaid_Wood_a.jpg"
+                src="./textures/Plaid_Wood_a.webp"
                 onClick={() => {
                   const menu1Elements = document.querySelector("#menu1Box");
                   const menu3Elements = document.querySelector("#menu3Box");
@@ -152,7 +164,7 @@ const Model2 = ({ url }) => {
                 width: 43,
                 height: 50,
               }}
-              src="./return.png"
+              src="./return.webp"
               onClick={() => {
                 const menu1Elements = document.querySelector("#menu1Box");
                 const menu2Elements = document.querySelector("#menu2Box");
@@ -166,10 +178,10 @@ const Model2 = ({ url }) => {
                 width: 50,
                 height: 50,
               }}
-              src="./textures/Wood_a.jpg"
+              src="./textures/Wood_a.webp"
               onClick={async () => {
                 const menu1Image = document.querySelector(".changeBodyImage");
-                menu1Image.setAttribute("src", "./textures/Wood_a.jpg");
+                menu1Image.setAttribute("src", "./textures/Wood_a.webp");
 
                 const modelViewerTexture1 =
                   document.querySelector("model-viewer#model");
@@ -177,16 +189,16 @@ const Model2 = ({ url }) => {
                 const woodMaterial = modelViewerTexture1.model.materials[0];
 
                 const wood1Normal = await modelViewerTexture1.createTexture(
-                  "./textures/Wood_Plywood_Front_001_normal.jpg"
+                  "./textures/Wood_Plywood_Front_001_normal.webp"
                 );
                 const wood1BaseColor = await modelViewerTexture1.createTexture(
-                  "./textures/Wood_Plywood_Front_001_basecolor.jpg"
+                  "./textures/Wood_a.webp"
                 );
                 const wood1Ambiant = await modelViewerTexture1.createTexture(
-                  "./textures/Wood_Plywood_Front_001_ambientOcclusion.jpg"
+                  "./textures/Wood_Plywood_Front_001_ambientOcclusion.webp"
                 );
                 const wood1Mettalic = await modelViewerTexture1.createTexture(
-                  "./textures/Wood_Plywood_Front_001_roughness.jpg"
+                  "./textures/Wood_Plywood_Front_001_roughness.webp"
                 );
 
                 createAndApplyTexture(
@@ -203,8 +215,8 @@ const Model2 = ({ url }) => {
                   woodMaterial,
                   "occlusionTexture",
                   wood1Ambiant
-                );
-                createAndApplyTexture(
+                ); 
+                 createAndApplyTexture(
                   woodMaterial,
                   "metallicRoughnessTexture",
                   wood1Mettalic
@@ -217,12 +229,12 @@ const Model2 = ({ url }) => {
                 width: 50,
                 height: 50,
               }}
-              src="./textures/diagonal_parquet_diffusion.png"
+              src="./textures/diagonal_parquet_diffusion.webp"
               onClick={async () => {
                 const menu1Image = document.querySelector(".changeBodyImage");
                 menu1Image.setAttribute(
                   "src",
-                  "./textures/diagonal_parquet_diffusion.png"
+                  "./textures/diagonal_parquet_diffusion.webp"
                 );
 
                 const modelViewerTexture1 =
@@ -231,16 +243,16 @@ const Model2 = ({ url }) => {
                 const woodMaterial = modelViewerTexture1.model.materials[0];
 
                 const wood1Normal = await modelViewerTexture1.createTexture(
-                  "./textures/diagonal_parquet_normal.png"
+                  "./textures/diagonal_parquet_normal.webp"
                 );
                 const wood1BaseColor = await modelViewerTexture1.createTexture(
-                  "./textures/diagonal_parquet_diffusion.png"
+                  "./textures/diagonal_parquet_diffusion.webp"
                 );
                 const wood1Ambiant = await modelViewerTexture1.createTexture(
-                  "./textures/diagonal_parquet_ambientOcclusion.png"
+                  "./textures/diagonal_parquet_ambientOcclusion.webp"
                 );
                 const wood1Mettalic = await modelViewerTexture1.createTexture(
-                  "./textures/diagonal_parquet_roughness.png"
+                  "./textures/diagonal_parquet_roughness.webp"
                 );
 
                 createAndApplyTexture(
@@ -271,12 +283,12 @@ const Model2 = ({ url }) => {
                 width: 50,
                 height: 50,
               }}
-              src="./textures/wood_table_001_diffusion.jpg"
+              src="./textures/wood_table_001_diffusion.webp"
               onClick={async () => {
                 const menu1Image = document.querySelector(".changeBodyImage");
                 menu1Image.setAttribute(
                   "src",
-                  "./textures/wood_table_001_diffusion.jpg"
+                  "./textures/wood_table_001_diffusion.webp"
                 );
 
                 const modelViewerTexture1 =
@@ -285,16 +297,16 @@ const Model2 = ({ url }) => {
                 const woodMaterial = modelViewerTexture1.model.materials[0];
 
                 const wood1Normal = await modelViewerTexture1.createTexture(
-                  "./textures/wood_table_001_normal.jpg"
+                  "./textures/wood_table_001_normal.webp"
                 );
                 const wood1BaseColor = await modelViewerTexture1.createTexture(
-                  "./textures/wood_table_001_diffusion.jpg"
+                  "./textures/wood_table_001_diffusion.webp"
                 );
                 const wood1Ambiant = await modelViewerTexture1.createTexture(
-                  "./textures/wood_table_001_ambientOcclusion.jpg"
+                  "./textures/wood_table_001_ambientOcclusion.webp"
                 );
                 const wood1Mettalic = await modelViewerTexture1.createTexture(
-                  "./textures/wood_table_001_roughness.jpg"
+                  "./textures/wood_table_001_roughness.webp"
                 );
 
                 createAndApplyTexture(
@@ -329,7 +341,7 @@ const Model2 = ({ url }) => {
                 width: 43,
                 height: 50,
               }}
-              src="./return.png"
+              src="./return.webp"
               onClick={() => {
                 const menu1Elements = document.querySelector("#menu1Box");
                 const menu3Elements = document.querySelector("#menu3Box");
@@ -343,10 +355,10 @@ const Model2 = ({ url }) => {
                 width: 50,
                 height: 50,
               }}
-              src="./textures/Plaid_Wood_a.jpg"
+              src="./textures/Plaid_Wood_a.webp"
               onClick={async () => {
                 const menu2Image = document.querySelector(".changeDoorsImage");
-                menu2Image.setAttribute("src", "./textures/Plaid_Wood_a.jpg");
+                menu2Image.setAttribute("src", "./textures/Plaid_Wood_a.webp");
 
                 const modelViewerTexture1 =
                   document.querySelector("model-viewer#model");
@@ -354,7 +366,7 @@ const Model2 = ({ url }) => {
                 const doorMaterial = modelViewerTexture1.model.materials[1];
 
                 const doorBaseColor = await modelViewerTexture1.createTexture(
-                  "./textures/Plaid_Wood_a.jpg"
+                  "./textures/Plaid_Wood_a.webp"
                 );
 
                 createAndApplyTexture(
@@ -370,12 +382,12 @@ const Model2 = ({ url }) => {
                 width: 50,
                 height: 50,
               }}
-              src="./textures/fabric_pattern_05_diffusion.jpg"
+              src="./textures/fabric_pattern_05_diffusion.webp"
               onClick={async () => {
                 const menu2Image = document.querySelector(".changeDoorsImage");
                 menu2Image.setAttribute(
                   "src",
-                  "./textures/fabric_pattern_05_diffusion.jpg"
+                  "./textures/fabric_pattern_05_diffusion.webp"
                 );
 
                 const modelViewerTexture1 =
@@ -383,9 +395,9 @@ const Model2 = ({ url }) => {
 
                 const doorMaterial = modelViewerTexture1.model.materials[1];
 
-                //const doorNormal = await modelViewerTexture1.createTexture('./textures/fabric_pattern_05_normal.jpg');
+                //const doorNormal = await modelViewerTexture1.createTexture('./textures/fabric_pattern_05_normal.webp');
                 const doorBaseColor = await modelViewerTexture1.createTexture(
-                  "./textures/fabric_pattern_05_diffusion.jpg"
+                  "./textures/fabric_pattern_05_diffusion.webp"
                 );
                 createAndApplyTexture(
                   doorMaterial,
@@ -400,12 +412,12 @@ const Model2 = ({ url }) => {
                 width: 50,
                 height: 50,
               }}
-              src="./textures/Rug_006_basecolor.jpg"
+              src="./textures/Rug_006_basecolor.webp"
               onClick={async () => {
                 const menu2Image = document.querySelector(".changeDoorsImage");
                 menu2Image.setAttribute(
                   "src",
-                  "./textures/Rug_006_basecolor.jpg"
+                  "./textures/Rug_006_basecolor.webp"
                 );
 
                 const modelViewerTexture1 =
@@ -414,7 +426,7 @@ const Model2 = ({ url }) => {
                 const doorMaterial = modelViewerTexture1.model.materials[1];
 
                 const doorBaseColor = await modelViewerTexture1.createTexture(
-                  "./textures/Rug_006_basecolor.jpg"
+                  "./textures/Rug_006_basecolor.webp"
                 );
                 createAndApplyTexture(
                   doorMaterial,
