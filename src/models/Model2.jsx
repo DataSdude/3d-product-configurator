@@ -25,6 +25,7 @@ const Model2 = () => {
           camera-controls
           touch-action="pan-y"
           ar
+          ar-scale="fixed"
         ></model-viewer>
         <div id="custom-alert">
           <div
