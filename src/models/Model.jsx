@@ -496,13 +496,8 @@ const Model = () => {
           onClick={async () => {
             const modelViewer = document.getElementById("model1");
             // Check if AR is supported
-            if (window.screen.width<768) {
-              if(modelViewer.canActivateAR)
-                await modelViewer.activateAR()
-              else {
-                document.getElementById("custom-alert").style.display = "block";
-                console.error('AR not supported.');
-              }
+            if (modelViewer.canActivateAR) {
+              await modelViewer.activateAR();
             } else {
               document.getElementById("custom-alert").style.display = "block";
               console.error('AR not supported.');
