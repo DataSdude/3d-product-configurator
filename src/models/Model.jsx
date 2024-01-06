@@ -496,19 +496,8 @@ const Model = () => {
           onClick={async () => {
             const modelViewer = document.getElementById("model1");
             // Check if AR is supported
-            if ('xr' in navigator && 'requestDevice' in navigator.xr) {
-              // Request XR device and enter AR mode
-              navigator.xr.requestDevice()
-                .then(function (xrDevice) {
-                  return xrDevice.requestSession({ immersive: true });
-                })
-                .then(function (xrSession) {
-                  // Activate AR mode on the model viewer
-                  modelViewer.activateAR(xrSession);
-                })
-                .catch(function (error) {
-                  console.error('Failed to enter AR:', error);
-                });
+            if (modelViewer.canActivateAR) {
+              await modelViewer.activateAR();
             } else {
               document.getElementById("custom-alert").style.display = "block";
               console.error('AR not supported.');
