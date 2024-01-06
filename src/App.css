@@ -11,7 +11,6 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   user-select: none;
 }
 Html{
@@ -21,10 +20,429 @@ img {
   cursor: pointer;
 }
 
+/*<400px S*/
+@media only screen and (max-width: 399px) {
+  .try-button {
+    display: inline-block;
+    padding: 0.55rem 1rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .try-button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .try-button:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #a4a5a5;
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .try-button:hover {
+    color: #fff;
+  }
+  .try-button:hover:before {
+    width: 100%;
+  }
+  .try-button:hover {
+    background-color: white;
+    color: #000000;
+    border: 1px solid #000;
+  }
+  .section-header p {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 2vh;
+  }
+  .flex-container-model-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .flex-container-model-selector p {
+    font-size: 10px;
+    cursor: pointer;
+  }
+  .configurator2 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20%;
+    width: 90vw;
+    height: 60vh;
+  }
+      /* CHair Model code */
+      .configurator {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 80vw;
+        height: 55vh;
+        padding: 1vw;
+        border: 1px solid #a4a5a5;
+        border-radius: 2px;
+      }
+      .flex-container-generic {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 0.5vw;
+      }
+      .flex-container-generic-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.5vw;
+      }
+      .flex-container-generic-materials {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .flex-container-generic-materials img {
+        margin-left: 2vw;
+        width: 30px;
+        height: 30px;
+      }
+      .partHeader {
+        font-weight: bold;
+      }
+      .Button {
+        display: flex;
+        justify-content: center;
+        color: #fff;
+        align-items: center;
+      }
+      /* END CHair Model code */
+  model-viewer {
+    margin-top: 12%;
+    width: 70vw;
+    height: 23vh;
+  } 
+  
+  .flex-container-selector img{
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  
+  /**
+  MENU 1 
+  */
+  #menu1Box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background: white;
+  border: 1px #808080 solid;
+  width: 90vw;
+  border-radius: 25px;
+  
+  }
+  .changeBody-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  padding-left: 5px;
+  width: 32vw;
+  }
+  div.changeBody-container {
+  border-left: 1px solid #808080;
+  }
+  
+  .changeDoors-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  padding-left: 5px;
+  width: 34%;
+  }
+  
+  div.changeDoors-container {
+  border-left: 1px solid #808080;
+  }
+  
+  
+  /**
+  END MENU 1 
+  */
+  
+  
+  /**
+  MENU 2 
+  */
+  #menu2Box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  background: white;
+  border: 1px #808080 solid;
+  width: 400px;
+  border-radius: 3ch;
+  padding: 5px;
+  }
+  
+  
+  /**
+  END MENU 2
+  */
+  
+  
+  /**
+  MENU 3
+  */
+  #menu3Box {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  background: white;
+  border: 1px #808080 solid;
+  width: 400px;
+  border-radius: 3ch;
+  padding: 5px;
+  }
+  
+  /**
+  END MENU 3
+  */
+  
+  h1 {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Merriweather';
+    padding-bottom: 5px;
+  }
+  
+  h3 {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Merriweather';
+    margin-bottom: 13px;
+  }
+  
+  h5 {
+    font-family: 'Merriweather', serif;
+    width: 300px;
+    font-style: italic;
+    padding-bottom: 10px;
+  }
+  
+  p#menu1ChangeDoors {
+    font-family: 'Merriweather';
+    margin: auto;
+  }
+  
+  .configurator2 p{
+    margin-left: 20px;
+  }
+  .myButton {
+    position: absolute;
+    top: 543px;
+    left: -833px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+    /* Style for the custom alert box */
+    #custom-alert {
+      display: none;
+      position: absolute;
+      transform: translate(0%, 50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      z-index: 10;
+    }
+    
+  #alertHeader {
+  margin: 0;
+  font-weight: 300;
+  }
+  #alertParagraph{
+  font-weight: 500;
+  font-size: small;
+  align-items: center;
+  }
+  
+  
+  /* Style for the overlay background */
+  #overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  }
+  
+  /* Style for the close button */
+  #close-btn {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  }
+  
+  h1 {
+    margin: 20px;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Merriweather';
+    width: 300px;
+  }
+  
+  h3 {
+    margin-bottom: 13px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Merriweather';
+    width: 300px;
+  }
+  
+  h5 {
+    margin-left: 20px;
+    font-family: 'Merriweather', serif;
+    width: 300px;
+    font-style: italic;
+    padding-bottom: 10px;
+  }
+  
+  
+  .myButton {
+    position: absolute;
+    top: 543px;
+    left: -627px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  
+  .myButton2model1 {
+    position: absolute;
+    top: 9px;
+    left: 353px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  
+  
+  /* src/components/ModelCards.css */
+  .model-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 50px;
+    height: 80vh; /* 100% of the viewport height */
+    width: 100vw;
+  }
+  
+  .model-card {
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .model-photo {
+    width: 90%; /* Make the image fill the container */
+    max-height: 30vh; /* Limit the height for better styling */
+    margin-bottom: 5px;
+  }
+  
+  .try-button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .try-button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .try-button:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #a4a5a5;
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .try-button:hover {
+    color: #fff;
+  }
+  .try-button:hover:before {
+    width: 100%;
+  }
+  .try-button:hover {
+    background-color: white;
+    color: #000000;
+    border: 1px solid #000;
+  }
+  
+  
+  }
 /*<500px S*/
 @media only screen and (max-width: 499px) {
 .section-header p {
-  font-size: 28px;
+  font-size: 20px;
   line-height: 32px;
 }
 
